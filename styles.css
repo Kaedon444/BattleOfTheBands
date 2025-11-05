@@ -1,19 +1,17 @@
 :root {
-  --background-dark: #222222;   
+  --background-dark: #222222;
   --text-white: #ffffff;
-  --accent-pink: #ff77a9;       
+  --accent-pink: #ff77a9;
   --accent-blue: #3a9eff;
-  --light-grey: rgba(68,68,68,0.85); /* semi-transparent for readability */
+  --light-grey: rgba(68,68,68,0.85);
 }
 
 /* BASE STYLES */
 body {
   font-family: 'Roboto', sans-serif;
   margin: 0;
-  background: var(--background-dark) url('yourbandphoto.jpg') no-repeat center center/cover;
+  background: var(--background-dark) url('images/background.jpg') no-repeat center center/cover;
   color: var(--text-white);
-  text-shadow: 1px 1px 2px rgba(255,119,169,0.5),  
-               -1px -1px 2px rgba(58,158,255,0.5); /* subtle glow for readability */
 }
 
 /* NAV BAR */
@@ -33,7 +31,6 @@ body {
   font-family: 'Montserrat', sans-serif;
   font-size: 2rem;
   color: var(--accent-pink);
-  text-shadow: none; /* simpler for readability */
 }
 
 .menu-icon {
@@ -71,14 +68,13 @@ body {
 
 /* HERO SECTION */
 .hero-section {
-  position: relative;
-  text-align: center;
-  padding: 120px 20px;
-  background: rgba(34,34,34,0.8);
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 40px;
+  text-align: center;
+  padding: 120px 20px;
+  background: rgba(34,34,34,0.8);
 }
 
 .hero-content h1 {
@@ -88,19 +84,14 @@ body {
   text-shadow: 
     2px 2px 0px var(--accent-pink),
     -2px -2px 0px var(--accent-blue),
-    2px -2px 0px var(--accent-pink); /* ONLY Battle of the Bands title has 3D effect */
-  margin-bottom: 15px;
+    2px -2px 0px var(--accent-pink);
 }
 
 .hero-content p {
   font-size: 1.2rem;
-  color: var(--text-white);
   margin-bottom: 25px;
-  text-shadow: 1px 1px 2px rgba(255,119,169,0.5), 
-               -1px -1px 2px rgba(58,158,255,0.5); /* subtle glow */
 }
 
-/* BUTTONS */
 .signup-button {
   background: var(--accent-pink);
   color: var(--text-white);
@@ -127,7 +118,6 @@ main {
   padding: 60px 8%;
 }
 
-/* SECTION HEADINGS */
 .info-section h2,
 .lineup-section h2 {
   font-family: 'Montserrat', sans-serif;
@@ -137,10 +127,8 @@ main {
   margin-bottom: 20px;
   text-transform: uppercase;
   letter-spacing: 1px;
-  text-shadow: none; /* simpler for readability */
 }
 
-/* BAND CARDS */
 .band-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -167,14 +155,10 @@ main {
 .band-card h3 {
   color: var(--accent-pink);
   text-transform: uppercase;
-  text-shadow: none; /* easier to read */
 }
 
 .band-card p {
-  font-size: 1rem;
   color: var(--text-white);
-  text-shadow: 1px 1px 2px rgba(255,119,169,0.5), 
-               -1px -1px 2px rgba(58,158,255,0.5);
 }
 
 /* FOOTER */
@@ -184,7 +168,6 @@ footer {
   text-align: center;
   padding: 35px;
   border-top: 3px solid var(--accent-pink);
-  text-shadow: none; /* simpler for readability */
 }
 
 footer a {
@@ -195,4 +178,60 @@ footer a:hover {
   text-shadow: 0 0 8px var(--accent-pink),
                0 0 12px var(--accent-blue),
                0 0 16px var(--accent-pink);
+}
+
+/* SIDE IMAGE */
+.hero-section img {
+  max-width: 300px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 
+    0 0 10px #ff77a9,
+    0 0 20px #3a9eff,
+    0 0 30px #ff77a9;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-section img:hover {
+  transform: scale(1.05);
+  box-shadow: 
+    0 0 15px #ff77a9,
+    0 0 25px #3a9eff,
+    0 0 35px #ff77a9;
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 768px) {
+  .hero-section {
+    flex-direction: column;
+    padding: 80px 20px;
+    gap: 20px;
+  }
+  .hero-content h1 {
+    font-size: 2.5rem;
+    text-shadow: 
+      1px 1px 0px var(--accent-pink),
+      -1px -1px 0px var(--accent-blue),
+      1px -1px 0px var(--accent-pink);
+  }
+  .hero-content p {
+    font-size: 1rem;
+  }
+  .signup-button {
+    padding: 12px 24px;
+    font-size: 1rem;
+  }
+  .hero-section img {
+    max-width: 80%;
+  }
+  .band-grid {
+    grid-template-columns: 1fr;
+  }
+  .info-section h2,
+  .lineup-section h2 {
+    font-size: 1.5rem;
+  }
+  main {
+    padding: 40px 5%;
+  }
 }
