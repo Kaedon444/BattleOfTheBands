@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clash of the Saints - Battle of the Bands</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- NAV BAR -->
+  <header class="top-bar">
+    <div class="nav-left">
+      <div class="menu-icon" id="menu-toggle">☰</div>
+      <nav class="dropdown-menu" id="dropdown-menu">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#lineup">Lineup</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+    <h1 class="logo">Clash of the Saints</h1>
+    <input type="text" placeholder="Search..." class="search-bar">
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero-section" id="home">
+    <div class="hero-content">
+      <h1>Battle of the Bands</h1>
+      <p>St. Mary’s High School Prom Fundraiser – Woodstock, ON</p>
+      <button class="signup-button">Register or Buy Tickets</button>
+    </div>
+    <img src="shug.jpg" alt="Band Image" style="max-width:300px; border-radius:8px;">
+  </section>
+
+  <!-- MAIN CONTENT -->
+  <main>
+    <!-- ABOUT SECTION -->
+    <section class="info-section" id="about">
+      <h2>The Event & The Cause</h2>
+      <p>
+        Celebrate Woodstock’s local music scene while supporting St. Mary’s Prom Night.
+        Every ticket helps create a safe, unforgettable night for our graduating class.
+      </p>
+      <ul>
+        <li><strong>Date:</strong> Saturday, May 10th</li>
+        <li><strong>Time:</strong> Doors open at 6:00 PM</li>
+        <li><strong>Location:</strong> St. Mary’s Auditorium, Woodstock, ON</li>
+      </ul>
+    </section>
+
+    <!-- BAND LINEUP -->
+    <section class="lineup-section" id="lineup">
+      <h2>Band Lineup</h2>
+      <div class="band-grid">
+        <div class="band-card">
+          <h3>The Static Waves</h3>
+          <p>Alternative Rock</p>
+        </div>
+        <div class="band-card">
+          <h3>Neon Chapel</h3>
+          <p>Indie Pop</p>
+        </div>
+        <div class="band-card">
+          <h3>Midnight Voltage</h3>
+          <p>Classic Rock</p>
+        </div>
+        <div class="band-card">
+          <h3>Blue Remedy</h3>
+          <p>Blues & Soul</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer id="contact">
+    <p>Contact us at <a href="mailto:stmarysbands@gmail.com">stmarysbands@gmail.com</a></p>
+    <p>&copy; 2025 St. Mary’s High School</p>
+  </footer>
+
+  <!-- SCRIPT FOR DROPDOWN MENU -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const toggle = document.getElementById("menu-toggle");
+      const menu = document.getElementById("dropdown-menu");
+
+      toggle.addEventListener("click", (e) => {
+        e.stopPropagation();
+        menu.style.display = menu.style.display === "block" ? "none" : "block";
+      });
+
+      document.addEventListener("click", () => {
+        menu.style.display = "none";
+      });
+    });
+  </script>
+</body>
+</html>
